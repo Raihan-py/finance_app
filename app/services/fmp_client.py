@@ -39,6 +39,21 @@ def get_company_profile(symbol) :
 
     if not data:
         return None
+    
+    profile = data[0]
+
+    clean_profile = {
+        "symbol" : profile.get("symbol"),
+        "price" : profile.get("price"),
+        "marketCap" : profile.get("marketCap"),
+        "exchange" : profile.get("exchange"),
+        "industry"  : profile.get("industry"),
+        "sector" : profile.get("sector"),
+        "country" : profile.get("country"),
+        "ceo" : profile.get("ceo"),
+    }
+
+    return clean_profile
 
 
 
