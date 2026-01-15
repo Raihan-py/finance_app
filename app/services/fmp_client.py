@@ -83,7 +83,7 @@ def get_company_metrics(symbol):
 
     response = httpx.get(url, params = params, timeout = 3)
 
-    if response.status_code in (404, 400):
+    if response.status_code in (404, 400, 402):
         return None
     elif response.status_code != 200:
         print(response.status_code)
